@@ -1,0 +1,26 @@
+# Kafka configuration
+kafka:
+  producer:
+    bootstrap-servers: 10.195.1.20:9094,10.195.1.19:9094,10.195.1.22:9094
+    security-protocol: SASL_PLAINTEXT
+    username: message-producer
+    password: cerence_1
+  consumer:
+    bootstrap-servers: 10.195.1.20:9094,10.195.1.19:9094,10.195.1.22:9094
+    security-protocol: SASL_PLAINTEXT
+    username: message-reader
+    password: cerence_1
+    group-id: local-mongodb-sink
+
+# Mongodb configuration
+mongodb:
+  user: root
+  password: cerence_1
+  host: dds-8vbe0445c6e12dd42.mongodb.zhangbei.rds.aliyuncs.com
+  port: 3717
+  # appName is used to compatibility with CosmosDB for mongodb, other mongodb server don't have an appName configuration
+  appName:
+  database: db-ali-test
+  replicaSet: mgset-507875294
+  ssl: false
+  collectionName: backup
